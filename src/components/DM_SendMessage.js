@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
-const DM_SendMessage = ({sendDM, senderid, receiverid}) => {
+const DM_SendMessage = ({sendDM, senderid, receiverid, setdm2}) => {
     const [sendingMsg, setSendingMsg] = useState()
     const handleFormSubmit= (e) => {
         e.preventDefault()

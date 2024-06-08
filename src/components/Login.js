@@ -3,7 +3,7 @@ import { Button, Col, Form } from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router';
 import axios from 'axios';
 
-const Login = ({login, setUserid}) => {
+const Login = ({ login }) => {
     const [userEmail, setUserEmail] = useState();
     const [data, setData] = useState();
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = ({login, setUserid}) => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         let userid = 0;
         switch (userEmail) {
             case 'greenhighpeach@gmail.com':
@@ -27,10 +27,18 @@ const Login = ({login, setUserid}) => {
             case 'huynguyen2210@gmail.com':
                 userid = 3;
                 break;
+            case 'hanh21B22@gmail.com':
+                userid = 2;
+                break;
+            case 'chichichanhchanh11@gmail.com':
+                userid = 4;
+                break;
+            case 'highskywind11@gmail.com':
+                userid = 5;
+                break;
             default:
                 userid = 0;
         }
-
         await login(userid)
         const navigateFunc = () => {
             navigate('/home/'.concat(userid));
@@ -38,7 +46,7 @@ const Login = ({login, setUserid}) => {
         navigateFunc();
         axios.get('https://localhost:7028/'.concat(userid))
             .then(res => {
-                setData(res.data)                
+                setData(res.data)
             })
             .catch(err => console.error(err))
     }

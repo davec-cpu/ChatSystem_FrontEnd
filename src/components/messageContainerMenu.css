@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+    border: 1px solid red;
+}
+
+.context-menu{
+    position: absolute;
+    border: 1px solid #333;
+}

@@ -5,7 +5,7 @@ import DM_SendMessage from './DM_SendMessage'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const DirectMessage = ({ sendDM, directMessage, setDM }) => {
+const DirectMessage = ({ sendDM, directMessage, setDM, setdm2, dm2 }) => {
     const [receiverName, setReceiverName] = useState();
     const params = useParams();
 
@@ -22,8 +22,8 @@ const DirectMessage = ({ sendDM, directMessage, setDM }) => {
     return (
         <div>
             {receiverName}
-            <DM_MessageContainer directMessage={directMessage} setDM={setDM} receiverName={receiverName} clasName='px-2'/>
-            <DM_SendMessage sendDM={sendDM} senderid = {params.senderid} receiverid={params.receiverid} />
+            <DM_MessageContainer directMessage={directMessage} setDM={setDM} receiverName={receiverName}  setdm2={setdm2} dm2={dm2} clasName='px-2'/>
+            <DM_SendMessage sendDM={sendDM} senderid = {params.senderid} receiverid={params.receiverid} setdm2={setdm2}/>
         </div>
     )
 }
